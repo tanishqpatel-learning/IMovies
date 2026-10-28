@@ -1,0 +1,311 @@
+.detailPage { min-height: 100vh; position: relative; }
+
+/* Backdrop */
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+.backdrop img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  filter: blur(2px) brightness(0.3);
+}
+.backdropGradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(6,9,19,0.5) 0%, rgba(6,9,19,0.95) 60%, rgba(6,9,19,1) 100%);
+}
+
+.backdropSkeleton { width: 100%; height: 500px; position: fixed; top: 0; }
+
+/* Main content */
+.mainContent {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  gap: 48px;
+  padding-top: 90px;
+  padding-bottom: 60px;
+}
+
+/* Poster */
+.posterSection { flex-shrink: 0; width: 260px; }
+
+.poster {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.7), var(--shadow-primary);
+  border: 1px solid var(--border-accent);
+}
+.poster img { width: 100%; display: block; }
+
+.ratingsBlock { margin-top: 16px; display: flex; flex-direction: column; gap: 10px; }
+
+.ratingBox {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--bg-glass);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 12px 16px;
+  backdrop-filter: blur(10px);
+}
+.ratingVal { font-size: 18px; font-weight: 700; color: white; }
+.ratingVal span { font-size: 13px; color: var(--text-muted); }
+.ratingLabel { font-size: 11px; color: var(--text-muted); margin-top: 2px; }
+
+.imdbLogo {
+  background: #f5c518;
+  color: black;
+  font-size: 11px;
+  font-weight: 800;
+  padding: 4px 7px;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+/* Info section */
+.infoSection { flex: 1; min-width: 0; }
+
+.certBadge {
+  display: inline-block;
+  padding: 4px 14px;
+  border-radius: var(--radius-full);
+  background: rgba(245, 197, 24, 0.15);
+  color: var(--secondary);
+  border: 1px solid rgba(245, 197, 24, 0.3);
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+}
+
+.movieTitle { font-size: clamp(28px, 4vw, 48px); font-weight: 900; margin-bottom: 8px; line-height: 1.1; }
+
+.tagline { font-size: 16px; color: var(--text-secondary); font-style: italic; margin-bottom: 16px; }
+
+.metaRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+.metaItem {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+.genres { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
+
+.langBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  font-size: 12px;
+  font-weight: 500;
+  background: rgba(255,255,255,0.06);
+  color: var(--text-secondary);
+  border: 1px solid var(--border);
+}
+
+.overview {
+  font-size: 15px;
+  color: rgba(255,255,255,0.75);
+  line-height: 1.8;
+  margin-bottom: 20px;
+  max-width: 640px;
+}
+
+.awards {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  background: rgba(245,197,24,0.08);
+  border: 1px solid rgba(245,197,24,0.2);
+  border-radius: var(--radius-md);
+  padding: 12px 16px;
+  font-size: 13px;
+  color: var(--secondary);
+  margin-bottom: 20px;
+  max-width: 520px;
+}
+
+.actionBtns { display: flex; gap: 14px; margin-bottom: 32px; }
+
+/* Cast */
+.castSection { margin-top: 8px; }
+.subTitle { font-size: 18px; font-weight: 700; margin-bottom: 16px; color: white; }
+.castScroll { display: flex; gap: 14px; overflow-x: auto; padding-bottom: 8px; scrollbar-width: none; }
+.castScroll::-webkit-scrollbar { display: none; }
+.castCard { flex-shrink: 0; width: 90px; text-align: center; }
+.castImg {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto 8px;
+  border: 2px solid var(--border-accent);
+}
+.castImg img { width: 100%; height: 100%; object-fit: cover; }
+.castName { font-size: 12px; font-weight: 600; color: white; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.castChar { font-size: 11px; color: var(--text-muted); margin-top: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+/* Shows section */
+.showsSection {
+  position: relative;
+  z-index: 1;
+  padding-bottom: 80px;
+}
+
+.showsTitle {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 24px;
+  font-weight: 800;
+  margin-bottom: 24px;
+}
+
+/* Date Picker */
+.datePicker { display: flex; gap: 10px; margin-bottom: 28px; overflow-x: auto; padding-bottom: 4px; scrollbar-width: none; }
+.datePicker::-webkit-scrollbar { display: none; }
+
+.dateBtn {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: 12px 20px;
+  border-radius: var(--radius-md);
+  background: rgba(255,255,255,0.05);
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: var(--transition);
+  min-width: 70px;
+}
+.dateBtn:hover { border-color: var(--primary); color: var(--primary); }
+.dateBtnActive {
+  background: var(--primary-light);
+  border-color: var(--primary);
+  color: #60a5fa;
+}
+.dateDayName { font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; }
+.dateDay { font-size: 22px; font-weight: 800; }
+.dateMonth { font-size: 11px; }
+
+/* Theatre list */
+.theatreList { display: flex; flex-direction: column; gap: 16px; }
+.theatreCard { padding: 24px; }
+.theatreHeader { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px; }
+.theatreName { font-size: 18px; font-weight: 700; }
+.theatreAddr {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+.amenities { display: flex; gap: 6px; flex-wrap: wrap; }
+.amenityTag {
+  padding: 3px 10px;
+  border-radius: var(--radius-full);
+  font-size: 11px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+}
+
+.showTimes { display: flex; flex-wrap: wrap; gap: 10px; }
+.showTimeBtn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 12px 20px;
+  border-radius: var(--radius-md);
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--border);
+  cursor: pointer;
+  transition: var(--transition);
+  min-width: 100px;
+}
+.showTimeBtn:not(:disabled):hover {
+  border-color: var(--primary);
+  background: var(--primary-light);
+}
+.showTimeBtn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+.showTime { font-size: 17px; font-weight: 700; color: white; }
+.showFormat { font-size: 11px; color: var(--primary); font-weight: 600; text-transform: uppercase; }
+.showSeats { font-size: 11px; color: var(--text-muted); }
+.lowSeats { color: #f97316 !important; }
+
+.noShows {
+  text-align: center;
+  padding: 60px 0;
+  color: var(--text-muted);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+.showsLoading { display: flex; flex-direction: column; gap: 12px; }
+.loadingWrap { position: relative; min-height: 80vh; }
+
+/* Trailer Modal */
+.trailerModal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.92);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(10px);
+  animation: fadeIn 0.3s ease;
+}
+.trailerContent {
+  position: relative;
+  width: min(900px, 95vw);
+  aspect-ratio: 16/9;
+}
+.trailerClose {
+  position: absolute;
+  top: -44px;
+  right: 0;
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 8px;
+}
+.trailerFrame {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: var(--radius-md);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .mainContent { flex-direction: column; align-items: center; padding-top: 80px; }
+  .posterSection { width: 200px; }
+  .theatreHeader { flex-direction: column; gap: 12px; }
+}

@@ -1,0 +1,81 @@
+.notificationsPage {
+  padding-bottom: 80px;
+}
+
+.header {
+  padding: 40px 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.title {
+  font-size: 32px;
+  font-weight: 800;
+  color: #fff;
+}
+
+.listWrap {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.notifItem {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 20px 24px;
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  transition: var(--transition);
+}
+
+.notifItem:hover {
+  border-color: var(--border-accent);
+  transform: translateX(4px);
+}
+
+.unread {
+  border-left: 4px solid var(--primary);
+  background: linear-gradient(90deg, var(--primary-light) 0%, var(--bg-card) 100%);
+}
+
+.notifIcon {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-md);
+  background: var(--primary-light);
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.notifContent {
+  flex: 1;
+}
+
+.notifTitle {
+  font-size: 16px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 4px;
+}
+
+.notifMessage {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin-bottom: 8px;
+}
+
+.notifTime {
+  font-size: 12px;
+  color: var(--text-muted);
+}

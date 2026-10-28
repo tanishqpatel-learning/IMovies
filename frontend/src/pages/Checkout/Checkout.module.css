@@ -1,0 +1,243 @@
+.checkoutPage { padding: 30px 0 80px; max-width: 1100px; }
+
+/* Steps */
+.steps {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  margin-bottom: 48px;
+}
+
+.step {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.step:not(:last-child)::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 1px;
+  background: var(--border);
+  margin: 0 16px;
+}
+
+.stepActive .stepCircle { background: var(--primary); color: white; box-shadow: 0 0 15px var(--primary-glow); }
+.stepActive { color: white; }
+.stepDone .stepCircle { background: #10b981; color: white; }
+.stepDone { color: #10b981; }
+
+.stepCircle {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 700;
+  flex-shrink: 0;
+  transition: var(--transition);
+}
+
+/* Grid */
+.checkoutGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+/* Cards */
+.summaryCard, .paymentCard {
+  padding: 28px;
+}
+
+.cardTitle {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Movie info */
+.movieInfo {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.moviePosterThumb {
+  width: 70px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+.movieName { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
+
+.showInfoText {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+/* Seats */
+.seatsSection { margin-bottom: 8px; }
+
+.seatsLabel { font-size: 13px; color: var(--text-muted); margin-bottom: 10px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px; }
+
+.seatsChips { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px; }
+
+.seatChipSummary {
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  font-size: 12px;
+  font-weight: 700;
+  background: var(--primary-light);
+  border: 1px solid var(--border-accent);
+  color: var(--primary);
+}
+
+.seatChipSummary.gold {
+  background: rgba(245,197,24,0.15);
+  border-color: rgba(245,197,24,0.3);
+  color: var(--secondary);
+}
+
+.seatChipSummary.platinum {
+  background: rgba(147,51,234,0.15);
+  border-color: rgba(147,51,234,0.3);
+  color: #9333ea;
+}
+
+.seatsBreakdown { display: flex; flex-direction: column; gap: 6px; }
+
+.seatLine {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+/* Price breakdown */
+.priceBreakdown { display: flex; flex-direction: column; gap: 8px; margin-bottom: 20px; }
+
+.priceLine {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+.priceTotal {
+  font-size: 17px;
+  font-weight: 700;
+  color: white;
+  border-top: 1px solid var(--border);
+  padding-top: 10px;
+  margin-top: 4px;
+}
+
+.continueBtn { margin-top: 8px; }
+
+/* Payment */
+.paymentHeader {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.paymentForm { display: flex; flex-direction: column; gap: 16px; }
+
+.paymentElementWrap { margin-bottom: 8px; }
+
+.securityNote {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: var(--text-muted);
+  padding: 12px 16px;
+  background: rgba(255,255,255,0.03);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+}
+
+.payBtn { animation: pulse-glow 2s infinite; }
+
+.btnSpinner {
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgba(255,255,255,0.3);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  flex-shrink: 0;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* Review section */
+.reviewSection {}
+
+.userInfo { display: flex; flex-direction: column; gap: 12px; margin-bottom: 20px; }
+
+.userRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  padding: 10px 14px;
+  background: rgba(255,255,255,0.04);
+  border-radius: var(--radius-md);
+}
+.userRow span { color: var(--text-muted); }
+
+.infoNote {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--text-secondary);
+  padding: 12px;
+  border-radius: var(--radius-md);
+  background: var(--primary-light);
+  border: 1px solid var(--border-accent);
+}
+
+/* Success */
+.successBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  gap: 20px;
+  text-align: center;
+}
+
+.successIcon { animation: float 2s ease-in-out infinite; }
+.successTitle { font-size: 36px; font-weight: 900; }
+.successMsg { font-size: 16px; color: var(--text-secondary); max-width: 400px; }
+.successBtns { display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; }
+
+/* Responsive */
+@media (max-width: 768px) {
+  .checkoutGrid { grid-template-columns: 1fr; }
+  .steps { gap: 0; }
+  .step:not(:last-child)::after { width: 30px; }
+}
